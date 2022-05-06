@@ -1,0 +1,79 @@
+
+ // import 
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+
+ 
+//Declare 
+
+public class GasStation1 extends JFrame{
+  private JLabel fullNameLabel,gasLabel,carWashLabel;
+  private JTextField fullNameTextField;
+  private JPanel centerPanel,northPanel,southPanel;
+  private ImageIcon carIcon , gasIcon;
+  private JCheckBox price; 
+  private JButton pay, printReceipt , clear;
+  
+  
+
+
+  // initialize
+  public  GasStation1 (){
+  gasIcon = new ImageIcon("gas.gif"); // if we want the image first the code of image should be written at first.
+  gasLabel = new JLabel(gasIcon);
+  fullNameLabel = new JLabel("$:");
+  fullNameTextField = new JTextField (8);
+  northPanel =new JPanel();
+  northPanel.add(gasLabel);
+  northPanel.add(fullNameLabel);
+  northPanel.add(fullNameTextField);  
+  add(northPanel, BorderLayout.NORTH);
+
+ 
+centerPanel = new JPanel();
+price = new JCheckBox("$10.00 ");
+carIcon = new ImageIcon("carwash.gif");
+carWashLabel = new JLabel(carIcon);
+centerPanel.add(price);
+centerPanel.add(carWashLabel);
+add(centerPanel , BorderLayout.CENTER);
+                                           //centerPanel.add(carWashIcon );
+                                           //carWashIcon = new ImageIcon("carwash.gif");
+
+pay = new JButton("Pay");
+printReceipt = new JButton("Print Receipt");
+clear=  new JButton("Clear");
+southPanel = new JPanel();
+southPanel.add(pay);
+southPanel.add(printReceipt);
+southPanel.add(clear);
+
+add(southPanel,BorderLayout.SOUTH);
+ 
+ 
+ 
+  
+
+  
+  
+  
+setVisible(true);// making our GUI visible
+setSize(500, 500); // setting the length and breadth of GUI
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+public static void main (String[]args)// creating the method
+{
+GasStation1 app = new GasStation1 ();// execute DeliveryService1Example
+}// end of main method.
+} //end of the class GuiExample.
+
+  
+  
+
